@@ -18,10 +18,11 @@
             bgCtx,
             particles,
             pCtx,
-            button,
-            wow,
-            happy,
-            audio;
+            buttonDiv,
+            wowDiv,
+            happyDiv,
+            audio,
+            wow = false;
 
         function run() {
             requestAnimFrame(render);
@@ -41,7 +42,22 @@
         }
 
         function ahWow() {
+            var wowDuration = 4000;
 
+            wow = true;
+            audio.play();
+
+            buttonDiv.className += ' disabled';
+            happyDiv.className += ' in';
+            wowDiv.className += ' in';
+
+            setTimeout(endWow, wowDuration);
+        }
+
+        function endWow() {
+            buttonDiv.className = buttonDiv.className.replace(' disabled', '');
+            happyDiv.className = happyDiv.className.replace(' in', '');
+            wowDiv.className = wowDiv.className.replace(' in', '');
         }
 
         window.onload = function() {
@@ -49,12 +65,12 @@
             bgCtx = background.getContext('2d');
             particles = document.getElementById('particles');
             pCtx = particles.getContext('2d');
-            button = document.getElementById('button');
-            wow = document.getElementById('wow');
-            happy = document.getElementById('happy');
+            buttonDiv = document.getElementById('button');
+            wowDiv = document.getElementById('wow');
+            happyDiv = document.getElementById('happy');
             audio = document.getElementById('audio');
 
-            button.addEventListener('click', ahWow);
+            buttonDiv.addEventListener('click', ahWow);
         };
     </script>
 </head>
@@ -63,9 +79,15 @@
         <canvas class="canvas" id="background"></canvas>
         <canvas class="canvas" id="particles"></canvas>
 
-        <div class="button" id="button"><span>Ah!</span></div>
         <div class="happy" id="happy"></div>
-        <div class="wow" id="wow">Wow!</div>
+
+        <div class="button" id="button">
+            <img src="public/images/ah.svg" class="shape">
+        </div>
+
+        <div class="wow" id="wow">
+            <img src="public/images/wow.svg" class="shape">
+        </div>
 
         <audio id="audio">
             <source src="public/audio/ah-wow.ogg" type="audio/ogg">

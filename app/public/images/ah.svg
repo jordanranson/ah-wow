@@ -28,16 +28,22 @@
   <g
      transform="translate(0,-1021.3622)"
      id="layer1">
-    <text
-       x="0.62663108"
-       y="1042.0299"
+    <g
        transform="scale(0.99174481,1.0083239)"
        id="text4016"
-       xml:space="preserve"
-       style="font-size:40.10438919px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans"><tspan
-         x="0.62663108"
-         y="1042.0299"
-         id="tspan4018"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ffffff;font-family:Luckiest Guy;-inkscape-font-specification:Luckiest Guy">AH!</tspan></text>
+       style="font-size:40.10438919px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans">
+      <path
+         d="m 26.318505,1040.3458 -9.712781,1.2533 -1.174934,-4.4256 -4.464746,0 -0.9791111,4.4256 L 0,1040.62 l 7.7937241,-26.0835 10.8877149,-0.5483 7.637066,26.3576 m -11.592675,-9.1644 -1.488248,-6.8147 -1.449085,6.8147 2.937333,0"
+         id="path2986"
+         style="font-variant:normal;font-stretch:normal;fill:#ffffff;font-family:Luckiest Guy;-inkscape-font-specification:Luckiest Guy" />
+      <path
+         d="m 50.012993,1042.0299 -9.791111,0.47 -0.07833,-9.047 -4.503911,0 -0.274151,8.577 -8.772835,0 0.744125,-27.5326 9.321137,0.4308 -0.587467,14.06 4.347253,0 0.03916,-15.1174 8.929493,0.235 0.626631,27.9242"
+         id="path2988"
+         style="font-variant:normal;font-stretch:normal;fill:#ffffff;font-family:Luckiest Guy;-inkscape-font-specification:Luckiest Guy" />
+      <path
+         d="m 61.507757,1012.9307 -1.605743,20.6005 -7.245422,0 -0.744124,-20.6005 9.595289,0 m -1.292427,26.6318 c -9e-6,0.5745 -0.110975,1.1097 -0.332898,1.6058 -0.22194,0.4961 -0.522201,0.9269 -0.900782,1.2924 -0.365543,0.3786 -0.796351,0.6723 -1.292427,0.8812 -0.496089,0.2219 -1.024808,0.3329 -1.58616,0.3329 -0.574416,0 -1.109663,-0.111 -1.605742,-0.3329 -0.496086,-0.2089 -0.933422,-0.5026 -1.312009,-0.8812 -0.365536,-0.3655 -0.659269,-0.7963 -0.8812,-1.2924 -0.208878,-0.4961 -0.313316,-1.0313 -0.313315,-1.6058 -10e-7,-0.5613 0.104437,-1.0966 0.313315,-1.6057 0.221931,-0.5091 0.515664,-0.9465 0.8812,-1.312 0.378587,-0.3786 0.815923,-0.6788 1.312009,-0.9008 0.496079,-0.2219 1.031326,-0.3329 1.605742,-0.3329 0.561352,0 1.090071,0.111 1.58616,0.3329 0.496076,0.222 0.926884,0.5222 1.292427,0.9008 0.378581,0.3655 0.678842,0.8029 0.900782,1.312 0.221923,0.5091 0.332889,1.0444 0.332898,1.6057"
+         id="path2990"
+         style="font-variant:normal;font-stretch:normal;fill:#ffffff;font-family:Luckiest Guy;-inkscape-font-specification:Luckiest Guy" />
+    </g>
   </g>
 </svg>

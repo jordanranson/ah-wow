@@ -22,8 +22,8 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: "./less/*",
-            tasks: ["less", "autoprefixer"]
+            files: ['./less/*','./less/**/*'],
+            tasks: ['less', 'autoprefixer']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-less');

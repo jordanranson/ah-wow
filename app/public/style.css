@@ -126,6 +126,10 @@ html,
 body {
   overflow: hidden;
 }
+body {
+  background-color: #505a7e;
+  color: #fff;
+}
 canvas,
 .button,
 .happy,
@@ -139,6 +143,78 @@ canvas,
   width: 100%;
   height: 100%;
 }
-canvas {
-  z-index: 5;
+#background {
+  z-index: 0;
+}
+.happy {
+  z-index: 1;
+}
+#particles {
+  z-index: 2;
+}
+.wow {
+  z-index: 3;
+}
+.button {
+  z-index: 4;
+}
+.button {
+  cursor: pointer;
+}
+.button [class^='shape'] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+.button.disabled {
+  opacity: 0;
+}
+.button .shape {
+  width: 16vmax;
+}
+.happy {
+  top: 50%;
+  left: 50%;
+  margin: -23vmax 0 0 -23vmax;
+  width: 46vmax;
+  height: 46vmax;
+  opacity: 0;
+  -webkit-transform: translate(100%, 100%);
+  transform: translate(100%, 100%);
+  background: #ccc;
+}
+.happy.in {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.wow {
+  width: 36vmax;
+  height: 36vmax;
+  top: 10%;
+  right: 10%;
+  opacity: 0;
+  -webkit-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+}
+.wow [class^='shape'] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+.wow.in {
+  opacity: 1;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+.wow.in [class^='shape'] {
+  -webkit-transform: translate(-50%, -50%) rotate(-7deg);
+  transform: translate(-50%, -50%) rotate(-7deg);
+}
+.wow .shape {
+  width: 36vmax;
 }
