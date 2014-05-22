@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link rel="stylesheet" href="public/style.css">
+    <script>
+        window.requestAnimFrame = (function(){
+            return  window.requestAnimationFrame       ||
+                    window.webkitRequestAnimationFrame ||
+                    window.mozRequestAnimationFrame    ||
+                    function( callback ){
+                        window.setTimeout(callback, 1000 / 60);
+                    };
+        })();
+
+        var background,
+            bgCtx,
+            particles,
+            pCtx,
+            button,
+            wow,
+            happy,
+            audio;
+
+        function run() {
+            requestAnimFrame(render);
+            render();
+        }
+
+        function render() {
+
+        }
+
+        function drawBackground() {
+
+        }
+
+        function drawParticles() {
+
+        }
+
+        function ahWow() {
+
+        }
+
+        window.onload = function() {
+            background = document.getElementById('background');
+            bgCtx = background.getContext('2d');
+            particles = document.getElementById('particles');
+            pCtx = particles.getContext('2d');
+            button = document.getElementById('button');
+            wow = document.getElementById('wow');
+            happy = document.getElementById('happy');
+            audio = document.getElementById('audio');
+
+            button.addEventListener('click', ahWow);
+        };
+    </script>
+</head>
+<body>
+    <div class="app">
+        <canvas class="canvas" id="background"></canvas>
+        <canvas class="canvas" id="particles"></canvas>
+
+        <div class="button" id="button"><span>Ah!</span></div>
+        <div class="happy" id="happy"></div>
+        <div class="wow" id="wow">Wow!</div>
+
+        <audio id="audio">
+            <source src="public/audio/ah-wow.ogg" type="audio/ogg">
+            <source src="public/audio/ah-wow.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+</body>
+</html>
