@@ -1,3 +1,25 @@
+@keyframes happy {
+    0% {
+        opacity: 0;
+        transform: translate3d(30%, 100%, 0);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate3d(0%, 0%, 0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translate3d(0%, 0%, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-30%, -100%, 0);
+    }
+}
+
 canvas, .button, .happy, .wow {
     position: absolute;
 }
@@ -15,6 +37,7 @@ canvas, .button {
 
 .button {
     cursor: pointer;
+    transition: all 200ms ease-in-out;
 
     [class^='shape'] {
         position: absolute;
@@ -37,14 +60,14 @@ canvas, .button {
     width: 46vmax;
     height: 46vmax;
 
+    -webkit-backface-visibility: hidden;
     opacity: 0;
-    transform: translate(100%, 100%);
+    transform: translate3d(30%, 100%, 0);
 
     background: #ccc;
 
     &.in {
-        opacity: 1;
-        transform: translate(0, 0);
+        animation: happy ease-in-out 4s;
     }
 }
 
@@ -56,10 +79,13 @@ canvas, .button {
     opacity: 0;
     transform: scale(.7,.7);
 
+    transition: all 200ms ease-in-out;
+
     [class^='shape'] {
         position: absolute;
         top: 50%; left: 50%;
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        transition: all 200ms ease-in-out;
     }
 
     &.in {
@@ -67,7 +93,7 @@ canvas, .button {
         transform: scale(1,1);
 
         [class^='shape'] {
-            transform: translate(-50%, -50%) rotate(-7deg);
+            transform: translate3d(-50%, -50%, 0) rotate(-7deg);
         }
     }
 

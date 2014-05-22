@@ -42,22 +42,23 @@
         }
 
         function ahWow() {
-            var wowDuration = 4000;
 
             wow = true;
+
+            audio.currentTime = 0;
             audio.play();
 
             buttonDiv.className += ' disabled';
             happyDiv.className += ' in';
             wowDiv.className += ' in';
 
-            setTimeout(endWow, wowDuration);
-        }
-
-        function endWow() {
-            buttonDiv.className = buttonDiv.className.replace(' disabled', '');
-            happyDiv.className = happyDiv.className.replace(' in', '');
-            wowDiv.className = wowDiv.className.replace(' in', '');
+            setTimeout(function() {
+                wowDiv.className = wowDiv.className.replace(' in', '');
+            }, 3600);
+            setTimeout(function() {
+                buttonDiv.className = buttonDiv.className.replace(' disabled', '');
+                happyDiv.className = happyDiv.className.replace(' in', '');
+            }, 4500);
         }
 
         window.onload = function() {
@@ -79,7 +80,9 @@
         <canvas class="canvas" id="background"></canvas>
         <canvas class="canvas" id="particles"></canvas>
 
-        <div class="happy" id="happy"></div>
+        <div class="happy" id="happy">
+            <img src="public/images/wow.svg" class="shape">
+        </div>
 
         <div class="button" id="button">
             <img src="public/images/ah.svg" class="shape">
