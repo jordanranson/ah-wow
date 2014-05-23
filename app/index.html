@@ -71,8 +71,16 @@
 
         }
 
-        function ahWow() {
-            wow = true;
+        function ahWow(e) {
+            var target = e.target;
+
+            if(target.className.indexOf('shape') !== -1) {
+                target = target.parentNode;
+            }
+
+            if(target.className.indexOf('disabled') !== -1) {
+                return;
+            }
 
             audio.currentTime = 0;
             audio.play();
@@ -124,7 +132,7 @@
         <canvas class="canvas" id="particles"></canvas>
 
         <div class="happy" id="happy">
-            <img src="public/images/../../../happy.jpg" class="shape">
+            <img src="public/images/happy.png" class="shape">
         </div>
 
         <div class="button" id="button">

@@ -248,8 +248,8 @@ canvas,
   transform: translate3d(30%, 100%, 0);
 }
 .happy img {
-  width: 52vmax;
-  height: 52vmax;
+  width: 54vmax;
+  height: 72.8vmax;
   position: absolute;
   top: 50%;
   left: 50%;
