@@ -22,19 +22,49 @@
             wowDiv,
             happyDiv,
             audio,
-            wow = false;
+            animateBackground = false,
+            spawnParticles = false,
+            pattern,
+            patternPos = 0,
+            particle;
+
+        function setupCanvas() {
+            var img = document.getElementById('pattern');
+            var cvs = document.createElement('canvas');
+            var ctx = cvs.getContext('2d');
+
+            background.width = particles.width = window.innerWidth;
+            background.height = particles.height = window.innerHeight;
+
+            cvs.width = img.width;
+            cvs.height = img.height;
+            pattern = ctx.createPattern(img, 'repeat');
+            bgCtx.fillStyle = pattern;
+
+            //cvs.width = cvs.height = 256;
+        }
 
         function run() {
-            requestAnimFrame(render);
+            requestAnimFrame(run);
             render();
         }
 
         function render() {
-
+            drawBackground();
+            drawParticles();
         }
 
         function drawBackground() {
+            bgCtx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
+            bgCtx.translate(-patternPos, -patternPos);
+
+            bgCtx.rect(patternPos, patternPos, background.width, background.height);
+            bgCtx.fill();
+
+            bgCtx.translate(patternPos, patternPos);
+
+            patternPos = patternPos+1 >= 227 ? 0 : patternPos+2;
         }
 
         function drawParticles() {
@@ -42,23 +72,31 @@
         }
 
         function ahWow() {
-
             wow = true;
 
             audio.currentTime = 0;
             audio.play();
 
             buttonDiv.className += ' disabled';
-            happyDiv.className += ' in';
-            wowDiv.className += ' in';
+            background.className += ' in';
+
+            setTimeout(function() {
+                happyDiv.className += ' in';
+            }, 800);
+
+            setTimeout(function() {
+                wowDiv.className += ' in';
+            }, 1000);
 
             setTimeout(function() {
                 wowDiv.className = wowDiv.className.replace(' in', '');
-            }, 3600);
+                background.className = background.className.replace(' in', '');
+            }, 4400);
+
             setTimeout(function() {
                 buttonDiv.className = buttonDiv.className.replace(' disabled', '');
                 happyDiv.className = happyDiv.className.replace(' in', '');
-            }, 4500);
+            }, 5400);
         }
 
         window.onload = function() {
@@ -71,17 +109,22 @@
             happyDiv = document.getElementById('happy');
             audio = document.getElementById('audio');
 
+            setupCanvas();
+            run();
+
             buttonDiv.addEventListener('click', ahWow);
         };
     </script>
 </head>
 <body>
     <div class="app">
+        <img src="public/images/background.png" width="227" height="227" id="pattern" class="hidden">
+
         <canvas class="canvas" id="background"></canvas>
         <canvas class="canvas" id="particles"></canvas>
 
         <div class="happy" id="happy">
-            <img src="public/images/wow.svg" class="shape">
+            <img src="public/images/../../../happy.jpg" class="shape">
         </div>
 
         <div class="button" id="button">

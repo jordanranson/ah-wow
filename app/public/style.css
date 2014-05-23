@@ -130,6 +130,9 @@ body {
   background-color: #505a7e;
   color: #fff;
 }
+img.hidden {
+  display: none;
+}
 @-webkit-keyframes happy {
   0% {
     opacity: 0;
@@ -202,6 +205,18 @@ canvas,
 .button {
   z-index: 4;
 }
+#background {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 0.7);
+  transform: translate3d(0, 0, 0) scale3d(0.7, 0.7, 0.7);
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+#background.in {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
 .button {
   cursor: pointer;
   -webkit-transition: all 200ms ease-in-out;
@@ -218,19 +233,28 @@ canvas,
   opacity: 0;
 }
 .button .shape {
-  width: 16vmax;
+  width: 10vmax;
+  opacity: .7;
 }
 .happy {
   top: 50%;
   left: 50%;
-  margin: -23vmax 0 0 -23vmax;
-  width: 46vmax;
-  height: 46vmax;
+  margin: -30vmax 0 0 -30vmax;
+  width: 60vmax;
+  height: 60vmax;
   -webkit-backface-visibility: hidden;
   opacity: 0;
   -webkit-transform: translate3d(30%, 100%, 0);
   transform: translate3d(30%, 100%, 0);
-  background: #ccc;
+}
+.happy img {
+  width: 52vmax;
+  height: 52vmax;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 .happy.in {
   -webkit-animation: happy ease-in-out 4s;
@@ -238,7 +262,7 @@ canvas,
 }
 .wow {
   width: 36vmax;
-  height: 36vmax;
+  height: 26vmax;
   top: 10%;
   right: 10%;
   opacity: 0;

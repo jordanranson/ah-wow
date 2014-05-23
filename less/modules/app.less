@@ -35,6 +35,17 @@ canvas, .button {
 .wow        { z-index: 3; }
 .button     { z-index: 4; }
 
+#background {
+    opacity: 0;
+    transform: translate3d(0,0,0) scale3d(.7,.7,.7);
+    transition: all 200ms ease-in-out;
+
+    &.in {
+        opacity: 1;
+        transform: translate3d(0,0,0) scale3d(1,1,1);
+    }
+}
+
 .button {
     cursor: pointer;
     transition: all 200ms ease-in-out;
@@ -50,21 +61,28 @@ canvas, .button {
     }
 
     .shape {
-        width: 16vmax;
+        width: 10vmax;
+        opacity: .7;
     }
 }
 
 .happy {
     top: 50%; left: 50%;
-    margin: -23vmax 0 0 -23vmax;
-    width: 46vmax;
-    height: 46vmax;
+    margin: -30vmax 0 0 -30vmax;
+    width: 60vmax;
+    height: 60vmax;
 
     -webkit-backface-visibility: hidden;
     opacity: 0;
     transform: translate3d(30%, 100%, 0);
 
-    background: #ccc;
+    img {
+        width: 52vmax;
+        height: 52vmax;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
 
     &.in {
         animation: happy ease-in-out 4s;
@@ -73,7 +91,7 @@ canvas, .button {
 
 .wow {
     width: 36vmax;
-    height: 36vmax;
+    height: 26vmax;
     top: 10%; right: 10%;
 
     opacity: 0;
